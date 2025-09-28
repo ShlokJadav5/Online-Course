@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login an Registration form - Mind Luster</title>
+    <link rel="stylesheet" href="Form.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn"onclick="login()">Login</button>
+                <button type="button" class="toggle-btn"onclick="Register()">Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="Images/facebook.png">
+                <img src="Images/instagram.png">
+                <img src="Images/twitter.png">
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="User id" required>
+                <input type="password" class="input-field" id="lpassword" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>Remember password</span>
+                <button type="submit" class="submit-btn" onclick="correctPassword()">Login</button>
+            </form>
+            <form id="Register" class="input-group">
+                <input type="text" class="input-field" placeholder="User id" required>
+                <input type="email" class="input-field" placeholder="Email id" required>
+                <input type="password" class="input-field" id="password" placeholder="Enter Password" required onkeyup="validatePassword()">
+                <div id="password-strength"></div>
+                <input type="checkbox" class="check-box"><span>I agree to the terms and conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+       
+    </div>
+    <script>
+        var x= document.getElementById("login");
+        var y= document.getElementById("Register");
+        var z= document.getElementById("btn");
+
+        function Register(){
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function login(){
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+        }
+        
+
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var strength = document.getElementById("password-strength");
+
+            var regexUpperCase = /[A-Z]/;
+            var regexLowerCase = /[a-z]/;
+            var regexDigit = /[0-9]/;
+            var regexSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
+
+            var isUpperCase = regexUpperCase.test(password);
+            var isLowerCase = regexLowerCase.test(password);
+            var isDigit = regexDigit.test(password);
+            var isSpecialChar = regexSpecialChar.test(password);
+
+            var isLengthValid = password.length >= 8;
+
+            if (isLengthValid && isUpperCase && isLowerCase && isDigit && isSpecialChar) {
+                strength.innerHTML = "Strong";
+                strength.style.color = "green";
+            } else if (isUpperCase && (isLengthValid|| isLowerCase || isDigit || isSpecialChar)) {
+                strength.innerHTML = "Moderate";
+                strength.style.color = "orange";
+            } else {
+                strength.innerHTML = "Weak";
+                strength.style.color = "red";
+            }
+        }
+
+        function correctPassword() {
+			var password = document.getElementById("lpassword").value;
+			var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+			if (regex.test(password)) {
+				alert("Valid Password");
+			} else {
+				alert("Invalid Password");
+			}
+		}
+
+    </script>
+</body>
+</html>

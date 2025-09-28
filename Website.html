@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mind Luster</title>
+    <link rel="stylesheet" href="WEB.css">
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+    <section id="banner">
+            <img src="Images/LOGO.png" class="logo">
+            <div class="banner-text">
+                <h1>Online Courses</h1>
+                <p>Be ahead of all let's learn Online</p>
+                <div class="banner-btn">
+                    <a href="Form.html"><span></span>Login</a>
+                 
+                </div>
+    </section>
+
+    <div id="sidenav">
+        <nav>
+            <ul>
+                <li><a href="#banner">Home</a></li>
+                <li><a href="#Features">Our Courses</a></li>
+                <li><a href="#teachers">Our Teachers</a></li>
+                <li><a href="#Contact-us">Contact us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="menubtn">
+        <img src="Images/Menu.png" id="menu">
+    </div>
+
+    <!--features-->
+
+    <section id="Features">
+        <div class="title-text">
+            <p>FEATURES</p>
+            <h1>Our Courses</h1>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature">
+                <h1>BCA</h1>
+                <div class="feature-desc">
+                    <div class="feature-text">
+                        <p>BCA is all about coading and making websites.</p>
+                    </div>
+                </div>
+                <h1>Animation</h1>
+                <div class="feature-desc">
+                    <div class="feature-text">
+                        <p>In today's time animation is on boom so it is 
+                            best time to learn it.</p>
+                    </div>
+                </div>
+                <h1>CGI</h1>
+                <div class="feature-desc">
+                    <div class="feature-text">
+                        <p>Nowadays every movie is incomplete without CGI
+                            so don't be late.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-img">
+                <img src="Images/BCA.jpg"
+            </div>
+        </div>
+    </section>
+
+
+
+     <!--Teachers-->
+
+     <section id="teachers">
+        <div class="title-text">
+            <h1>Our Teachers</h1>
+        </div>
+        <div class="teachers-box">
+            <div class="tinfo">
+                <img src="Images/T1.jpg">
+                <div class="ttext">
+                    <h3>Sheetal mam</h3>
+                    <hr>
+                    <p>Experience: 5 Years</p>
+                </div>
+            </div>
+            <div class="tinfo">
+                <img src="Images/T2.jpg">
+                <div class="ttext">
+                    <h3>Frank sir</h3>
+                    <hr>
+                    <p>Experience: 3 Years</p>
+                </div>
+            </div>
+            <div class="tinfo">
+                <img src="Images/T3.jpg">
+                <div class="ttext">
+                    <h3>Syno mam</h3>
+                    <hr>
+                    <p>Experience: 8 Years</p>
+                </div>
+            </div>
+            <div class="tinfo">
+                <img src="Images/T4.jpg">
+                <div class="ttext">
+                    <h3>Simran mam</h3>
+                    <hr>
+                    <p>Experience: 10 Years</p>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+
+    <!--Contact us-->
+    <section id="Contact-us">
+        <div class="title-text">
+            <h1>Contact us</h1>
+        </div>
+        <div class="about-row">
+            <div class="about-left">
+            <h1>Studying hours</h1>
+            <p><i class="fa fa-clock-o"></i>Monday to Saturday - 10am to 6pm</p>
+            <p><i class="fa fa-clock-o"></i>Sunday - 10am to 1pm</p>
+            </div>
+            <div class="about-right">
+            <h1>Get in touch</h1>
+            <p>College Road</p>
+            <p>mindluster@gmail.com</p>
+            <p>+91 9499878300</p>
+            </div>
+        </div>
+        <div class="Copy">
+            <p>Copyright@ Mind Luster</p>
+        </div>
+    </section>
+
+
+    <script>
+        var menubtn = document.getElementById("menubtn")
+        var sidenav = document.getElementById("sidenav")
+        var menu = document.getElementById("menu")
+
+        sidenav.style.right ="-250px";
+
+        menubtn.onclick = function(){
+            if(sidenav.style.right =="-250px"){
+                sidenav.style.right ="0";
+            }
+            else{
+                sidenav.style.right ="-250px";
+            }
+        }
+
+        var scroll = new SmoothScroll('a[href*="#"]', {
+	speed: 1000,
+	speedAsDuration: true
+});
+    </script>
+
+   
+</body>
+</html>
